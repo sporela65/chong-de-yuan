@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>播放 · 崇德園晨會</title>
+<meta name="description" content="崇德園晨會影片播放頁。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3ecdc;
+    --ink:#2a2721;
+    --ink-soft:#5a544a;
+    --gold:#a9853f;
+    --gold-deep:#7d5f2a;
+    --vermilion:#9e2b25;
+    --tile:#3d3a33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.7;
+    min-height:100vh;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(169,133,63,.06), transparent 50%),
+      radial-gradient(ellipse at 85% 85%, rgba(62,58,50,.05), transparent 55%),
+      repeating-linear-gradient(0deg, rgba(120,100,60,.025) 0 1px, transparent 1px 3px);
+    pointer-events:none;
+    z-index:0;
+  }
+  .wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 20px 80px}
+
+  .roof{margin:0 -20px;line-height:0}
+  .roof svg{width:100%;height:auto;display:block}
+
+  header{text-align:center;padding:22px 20px 8px;position:relative}
+  .brand{
+    display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:inherit;
+  }
+  .seal{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:40px;height:40px;
+    background:var(--vermilion);color:#f7ecd9;
+    border-radius:5px;
+    font-size:19px;font-weight:900;
+    box-shadow:2px 2px 0 rgba(42,39,33,.18), inset 0 0 0 2px rgba(247,236,217,.35);
+    transform:rotate(-3deg);
+  }
+  .brand .name{font-size:24px;font-weight:900;letter-spacing:.2em;text-indent:.1em}
+  .back{
+    display:inline-block;margin-top:14px;
+    color:var(--gold-deep);text-decoration:none;font-size:14px;letter-spacing:.12em;
+    border-bottom:1px solid transparent;transition:border-color .2s ease;
+  }
+  .back:hover{border-color:var(--gold-deep)}
+
+  main{margin-top:26px}
+  .video-frame{
+    background:#1d1b17;border-radius:6px;overflow:hidden;
+    box-shadow:0 10px 30px rgba(60,50,30,.22);
+    border:1px solid #c9b787;
+  }
+  .video-frame video{display:block;width:100%;max-height:72vh;background:#000}
+
+  .play-info{
+    margin-top:20px;padding:16px 4px 0;
+    display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
+    border-top:2px solid var(--tile);
+  }
+  .play-info h1{font-size:21px;font-weight:700;letter-spacing:.04em}
+  .play-info .meta{font-size:13.5px;color:var(--ink-soft);letter-spacing:.08em}
+
+  .missing{text-align:center;color:var(--ink-soft);margin-top:60px;font-size:15px}
+
+  footer{
+    margin-top:60px;text-align:center;color:var(--ink-soft);font-size:12.5px;letter-spacing:.08em;
+  }
+  footer .rule{width:120px;height:1px;background:var(--gold);margin:0 auto 14px;opacity:.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="roof" aria-hidden="true">
+    <svg viewBox="0 0 900 90" preserveAspectRatio="none" role="presentation">
+      <path d="M0 90 L0 78 Q120 66 300 60 Q450 55 600 60 Q780 66 900 78 L900 90 Z" fill="#3d3a33" opacity="0.22"/>
+      <path d="M0 90 L0 84 Q40 78 90 74 Q60 82 30 88 Z" fill="#3d3a33" opacity="0.5"/>
+      <path d="M0 90 L0 88 Q150 72 330 66 Q450 62 570 66 Q750 72 900 88 L900 90 Z" fill="#3d3a33"/>
+      <path d="M0 90 Q60 74 120 70 Q70 84 8 90 Z" fill="#3d3a33"/>
+      <path d="M900 90 Q840 74 780 70 Q830 84 892 90 Z" fill="#3d3a33"/>
+      <rect x="0" y="88.5" width="900" height="1.5" fill="#a9853f" opacity="0.7"/>
+    </svg>
+  </div>
+
+  <header>
+    <a class="brand" href="index.html">
+      <span class="seal">晨</span>
+      <span class="name">崇德園晨會</span>
+    </a>
+    <div><a class="back" href="index.html">&larr; 返回影片列表</a></div>
+  </header>
+
+  <main id="main"></main>
+
+  <footer>
+    <div class="rule"></div>
+    <p>崇德園晨會影片集</p>
+    <p style="margin-top:4px;opacity:.75">頁面氛圍取材自杭州靈隱寺之山寺意境</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var main = document.getElementById('main');
+  var key = new URLSearchParams(window.location.search).get('d');
+
+  fetch('videos.json').then(function(r){return r.json();}).then(function(videos){
+    var v = null;
+    videos.forEach(function(x){ if (x.date === key) v = x; });
+    if (!v || !v.ready){
+      main.innerHTML = '<p class="missing">找不到這部影片。<br><br><a class="back" href="index.html">&larr; 返回影片列表</a></p>';
+      return;
+    }
+    document.title = v.title + ' · 崇德園晨會';
+    var p = v.date.split('-');
+    var roc = (parseInt(p[0],10)-1911) + '.' + parseInt(p[1],10) + '.' + parseInt(p[2],10);
+    main.innerHTML =
+      '<div class="video-frame"><video controls playsinline preload="metadata"' +
+        (v.poster ? ' poster="' + v.poster + '"' : '') + ' src="' + v.file + '"></video></div>' +
+      '<div class="play-info"><h1>' + v.title + '</h1>' +
+      '<span class="meta">' + p[0] + ' 年 ' + parseInt(p[1],10) + ' 月 ' + parseInt(p[2],10) + ' 日（民國 ' + roc + '）' +
+      (v.duration ? ' · 長度 ' + v.duration : '') + '</span></div>';
+  }).catch(function(){
+    main.innerHTML = '<p class="missing">影片載入失敗，請稍後再試。</p>';
+  });
+})();
+</script>
+</body>
+</html>

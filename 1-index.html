@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>崇德園晨會 · 影片集</title>
+<meta name="description" content="崇德園晨會影片集，依日期與標題列出，點選即可播放。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3ecdc;
+    --paper-2:#ece2cc;
+    --ink:#2a2721;
+    --ink-soft:#5a544a;
+    --gold:#a9853f;
+    --gold-deep:#7d5f2a;
+    --temple-yellow:#c9a45c;
+    --vermilion:#9e2b25;
+    --tile:#3d3a33;
+    --line:#cbb693;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.7;
+    min-height:100vh;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(169,133,63,.06), transparent 50%),
+      radial-gradient(ellipse at 85% 85%, rgba(62,58,50,.05), transparent 55%),
+      repeating-linear-gradient(0deg, rgba(120,100,60,.025) 0 1px, transparent 1px 3px);
+    pointer-events:none;
+    z-index:0;
+  }
+  .wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 20px 80px}
+
+  /* ——— 屋脊 roofline ——— */
+  .roof{margin:0 -20px;line-height:0}
+  .roof svg{width:100%;height:auto;display:block}
+
+  header{text-align:center;padding:34px 20px 26px;position:relative}
+  .seal{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:54px;height:54px;margin-bottom:14px;
+    background:var(--vermilion);color:#f7ecd9;
+    border-radius:6px;
+    font-size:26px;font-weight:900;
+    box-shadow:2px 2px 0 rgba(42,39,33,.18), inset 0 0 0 2px rgba(247,236,217,.35);
+    transform:rotate(-3deg);
+    letter-spacing:0;
+  }
+  h1{
+    font-size:clamp(34px,6vw,48px);font-weight:900;letter-spacing:.22em;
+    text-indent:.22em;color:var(--ink);
+  }
+  .subtitle{
+    margin-top:10px;color:var(--gold-deep);font-size:15px;letter-spacing:.5em;text-indent:.5em;
+  }
+  .divider{
+    margin:22px auto 0;width:min(420px,80%);height:22px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+  }
+  .divider::before,.divider::after{
+    content:"";flex:1;height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold));
+  }
+  .divider::after{background:linear-gradient(90deg,var(--gold),transparent)}
+  .divider .dot{width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+
+  .intro{
+    text-align:center;color:var(--ink-soft);font-size:14.5px;margin:18px auto 8px;max-width:560px;
+  }
+
+  /* ——— 影片清單 ——— */
+  .month-group{margin-top:44px}
+  .month-heading{
+    display:flex;align-items:baseline;gap:14px;
+    padding-bottom:8px;border-bottom:2px solid var(--tile);
+  }
+  .month-heading .ym{
+    font-size:22px;font-weight:700;letter-spacing:.14em;color:var(--tile);
+  }
+  .month-heading .count{
+    font-size:13px;color:var(--gold-deep);letter-spacing:.1em;
+  }
+
+  .entry{
+    display:flex;align-items:stretch;gap:0;
+    margin-top:18px;
+    background:linear-gradient(180deg,#faf5e9,#f2ead6);
+    border:1px solid #d8c9a3;
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:0 1px 0 rgba(42,39,33,.06), 0 6px 18px rgba(90,75,45,.07);
+    transition:box-shadow .25s ease, transform .25s ease;
+  }
+  .entry.playable:hover{
+    box-shadow:0 2px 0 rgba(42,39,33,.06), 0 10px 26px rgba(90,75,45,.13);
+    transform:translateY(-1px);
+  }
+  .entry-date{
+    flex:0 0 96px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:var(--tile);color:#efe6cf;
+    padding:18px 8px;
+  }
+  .entry-date .day{font-size:30px;font-weight:900;line-height:1}
+  .entry-date .ym-small{font-size:12px;letter-spacing:.18em;margin-top:6px;opacity:.85}
+  .entry-main{flex:1;padding:16px 18px;display:flex;align-items:center;gap:14px}
+  .entry-info{flex:1;min-width:0}
+  .entry-title{font-size:17.5px;font-weight:700;letter-spacing:.03em}
+  .entry-meta{margin-top:5px;font-size:13px;color:var(--ink-soft);letter-spacing:.06em;display:flex;gap:14px;flex-wrap:wrap}
+  .badge-pending{
+    display:inline-block;padding:2px 9px;border:1px solid var(--gold);border-radius:999px;
+    color:var(--gold-deep);font-size:12px;letter-spacing:.12em;
+  }
+  .thumb{
+    flex:0 0 auto;position:relative;
+    width:172px;aspect-ratio:16/9;
+    border:1px solid #c9b787;border-radius:4px;overflow:hidden;
+    cursor:pointer;background:#1d1b17;padding:0;
+    box-shadow:0 3px 10px rgba(60,50,30,.18);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .thumb .thumb-play{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:rgba(20,18,14,.30);transition:background .2s ease;
+  }
+  .thumb .thumb-play span{
+    width:42px;height:42px;border-radius:50%;
+    background:rgba(158,43,37,.92);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.35);
+  }
+  .thumb .thumb-play svg{width:15px;height:15px;margin-left:2px;fill:#f7ecd9}
+  .entry.playable .thumb:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(60,50,30,.25)}
+  .entry.playable .thumb:hover .thumb-play{background:rgba(20,18,14,.12)}
+  .entry:not(.playable) .thumb{cursor:default}
+  .entry:not(.playable) .thumb .thumb-play{display:none}
+  .entry.playable{cursor:pointer}
+
+  .entry{flex-wrap:wrap}
+  .entry-date,.entry-main{flex-wrap:nowrap}
+
+  footer{
+    margin-top:70px;text-align:center;color:var(--ink-soft);font-size:12.5px;letter-spacing:.08em;
+  }
+  footer .rule{width:120px;height:1px;background:var(--gold);margin:0 auto 14px;opacity:.6}
+
+  @media (max-width:520px){
+    .entry-date{flex-basis:76px}
+    .entry-date .day{font-size:24px}
+    .entry-main{padding:13px 14px}
+    .entry-title{font-size:16px}
+    .thumb{width:118px}
+    .thumb .thumb-play span{width:34px;height:34px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="roof" aria-hidden="true">
+    <!-- 層疊飛簷 roofline, inspired by temple architecture -->
+    <svg viewBox="0 0 900 90" preserveAspectRatio="none" role="presentation">
+      <path d="M0 90 L0 78 Q120 66 300 60 Q450 55 600 60 Q780 66 900 78 L900 90 Z" fill="#3d3a33" opacity="0.22"/>
+      <path d="M0 90 L0 84 Q40 78 90 74 Q60 82 30 88 Z" fill="#3d3a33" opacity="0.5"/>
+      <path d="M0 90 L0 88 Q150 72 330 66 Q450 62 570 66 Q750 72 900 88 L900 90 Z" fill="#3d3a33"/>
+      <path d="M0 90 Q60 74 120 70 Q70 84 8 90 Z" fill="#3d3a33"/>
+      <path d="M900 90 Q840 74 780 70 Q830 84 892 90 Z" fill="#3d3a33"/>
+      <rect x="0" y="88.5" width="900" height="1.5" fill="#a9853f" opacity="0.7"/>
+    </svg>
+  </div>
+
+  <header>
+    <div class="seal">晨</div>
+    <h1>崇德園晨會</h1>
+    <div class="subtitle">晨 會 影 片 集</div>
+    <div class="divider"><span class="dot"></span></div>
+    <p class="intro">依日期與標題列出晨會影片，點選影片縮圖即可前往播放頁。</p>
+  </header>
+
+  <main id="list" aria-live="polite"></main>
+
+  <footer>
+    <div class="rule"></div>
+    <p>崇德園晨會影片集</p>
+    <p style="margin-top:4px;opacity:.75">頁面氛圍取材自杭州靈隱寺之山寺意境</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var list = document.getElementById('list');
+  function fmtDate(iso){
+    var p = iso.split('-');
+    return {day: p[2], ym: p[0] + ' / ' + p[1], roc: (parseInt(p[0],10)-1911) + '.' + parseInt(p[1],10) + '.' + parseInt(p[2],10)};
+  }
+  function monthKey(iso){ return iso.slice(0,7); }
+
+  fetch('videos.json').then(function(r){return r.json();}).then(function(videos){
+    videos.sort(function(a,b){ return a.date < b.date ? 1 : -1; });
+    var groups = {};
+    videos.forEach(function(v){
+      var k = monthKey(v.date);
+      (groups[k] = groups[k] || []).push(v);
+    });
+    Object.keys(groups).sort().reverse().forEach(function(k){
+      var g = document.createElement('section');
+      g.className = 'month-group';
+      var head = document.createElement('div');
+      head.className = 'month-heading';
+      var gp = k.split('-');
+      head.innerHTML = '<span class="ym">' + gp[0] + ' 年 ' + parseInt(gp[1],10) + ' 月</span>' +
+                       '<span class="count">' + groups[k].length + ' 場</span>';
+      g.appendChild(head);
+      groups[k].forEach(function(v){ g.appendChild(renderEntry(v)); });
+      list.appendChild(g);
+    });
+  }).catch(function(){
+    list.innerHTML = '<p style="text-align:center;color:var(--ink-soft);margin-top:40px">影片清單載入失敗，請稍後再試。</p>';
+  });
+
+  function renderEntry(v){
+    var d = fmtDate(v.date);
+    var el = document.createElement('article');
+    el.className = 'entry' + (v.ready ? ' playable' : '');
+    var meta = '<span>' + d.roc + '（民國）</span>';
+    if (v.duration) meta += '<span>長度 ' + v.duration + '</span>';
+    if (!v.ready) meta += '<span class="badge-pending">影片上傳中</span>';
+    el.innerHTML =
+      '<div class="entry-date"><div class="day">' + d.day + '</div><div class="ym-small">' + d.ym + '</div></div>' +
+      '<div class="entry-main">' +
+        '<div class="entry-info"><div class="entry-title">' + v.title + '</div>' +
+        '<div class="entry-meta">' + meta + '</div></div>' +
+        '<button class="thumb" aria-label="開啟播放器：' + v.title + '">' +
+          (v.poster ? '<img src="' + v.poster + '" alt="' + v.title + ' 影片縮圖" loading="lazy">' : '') +
+          '<div class="thumb-play"><span><svg viewBox="0 0 24 24"><path d="M6 3.8v16.4c0 1 1.1 1.6 2 1.1l13-8.2c.8-.5.8-1.7 0-2.2L8 2.7c-.9-.5-2 .1-2 1.1z"/></svg></span></div>' +
+        '</button>' +
+      '</div>';
+
+    if (v.ready){
+      el.addEventListener('click', function(){
+        window.location.href = 'play.html?d=' + encodeURIComponent(v.date);
+      });
+    }
+    return el;
+  }
+})();
+</script>
+</body>
+</html>
