@@ -119,11 +119,13 @@
 <script>
 (function(){
   var main = document.getElementById('main');
-  var key = new URLSearchParams(window.location.search).get('d');
+  var params = new URLSearchParams(window.location.search);
+  var key = params.get('id');
+  var legacyDate = params.get('d');
 
   fetch('videos.json?v=' + Date.now(), {cache:'no-store'}).then(function(r){return r.json();}).then(function(videos){
     var v = null;
-    videos.forEach(function(x){ if (x.date === key) v = x; });
+    videos.forEach(function(x){ if ((key && (x.id || x.date) === key) || (!key && x.date === legacyDate && !v)) v = x; });
     if (!v || !v.ready){
       main.innerHTML = '<p class="missing">找不到這部影片。<br><br><a class="back" href="index.html">&larr; 返回影片列表</a></p>';
       return;
