@@ -5,7 +5,17 @@
     "duration": "4:44",
     "file": "1-20261104-notes-1.mp4",
     "ready": true,
-    "poster": "2-20261104-notes-1.jpg"
+    "poster": "2-20261104-notes-1.jpg",
+    "id": "2026-11-04-1"
+  },
+  {
+    "id": "2026-11-04-2",
+    "date": "2026-11-04",
+    "title": "晨會筆記-金馬獎（二）",
+    "duration": "2:03",
+    "file": "1-20261104-notes-2.mp4",
+    "poster": "2-20261104-notes-2.jpg",
+    "ready": true
   },
   {
     "date": "2026-11-03",
