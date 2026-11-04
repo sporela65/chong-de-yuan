@@ -206,7 +206,7 @@
   }
   function monthKey(iso){ return iso.slice(0,7); }
 
-  fetch('videos.json').then(function(r){return r.json();}).then(function(videos){
+  fetch('videos.json?v=' + Date.now(), {cache:'no-store'}).then(function(r){return r.json();}).then(function(videos){
     videos.sort(function(a,b){ return a.date < b.date ? 1 : -1; });
     var groups = {};
     videos.forEach(function(v){
