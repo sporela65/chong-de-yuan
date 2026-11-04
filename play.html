@@ -121,7 +121,7 @@
   var main = document.getElementById('main');
   var key = new URLSearchParams(window.location.search).get('d');
 
-  fetch('videos.json').then(function(r){return r.json();}).then(function(videos){
+  fetch('videos.json?v=' + Date.now(), {cache:'no-store'}).then(function(r){return r.json();}).then(function(videos){
     var v = null;
     videos.forEach(function(x){ if (x.date === key) v = x; });
     if (!v || !v.ready){
