@@ -138,7 +138,23 @@
         (v.poster ? ' poster="' + v.poster + '"' : '') + ' src="' + v.file + '"></video></div>' +
       '<div class="play-info"><h1>' + v.title + '</h1>' +
       '<span class="meta">' + p[0] + ' 年 ' + parseInt(p[1],10) + ' 月 ' + parseInt(p[2],10) + ' 日（民國 ' + roc + '）' +
-      (v.duration ? ' · 長度 ' + v.duration : '') + '</span></div>';
+      (v.duration ? ' · 長度 ' + v.duration : '') + '</span>' +
+      '<span class="meta" id="vc" style="display:none"></span></div>';
+    var COUNTER = 'https://chongde-counter.sporela886.workers.dev';
+    var vid = v.id || v.date;
+    var vcEl = document.getElementById('vc');
+    function showCount(n){ vcEl.textContent = '觀看次數 ' + n; vcEl.style.display = ''; }
+    fetch(COUNTER + '/get?id=' + encodeURIComponent(vid)).then(function(r){return r.json();}).then(function(d){
+      if (d && typeof d.count === 'number') showCount(d.count);
+    }).catch(function(){});
+    var counted = false;
+    main.querySelector('video').addEventListener('play', function(){
+      if (counted) return;
+      counted = true;
+      fetch(COUNTER + '/hit?id=' + encodeURIComponent(vid), {method:'POST'}).then(function(r){return r.json();}).then(function(d){
+        if (d && typeof d.count === 'number') showCount(d.count);
+      }).catch(function(){});
+    });
   }).catch(function(){
     main.innerHTML = '<p class="missing">影片載入失敗，請稍後再試。</p>';
   });
