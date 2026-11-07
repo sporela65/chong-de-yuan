@@ -129,7 +129,7 @@
     cursor:pointer;background:#1d1b17;padding:0;
     box-shadow:0 3px 10px rgba(60,50,30,.18);
     transition:transform .2s ease, box-shadow .2s ease;
-  }
+  } 
   .thumb img{width:100%;height:100%;object-fit:cover;display:block}
   .thumb .thumb-play{
     position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -207,7 +207,11 @@
   function monthKey(iso){ return iso.slice(0,7); }
 
   fetch('videos.json?v=' + Date.now(), {cache:'no-store'}).then(function(r){return r.json();}).then(function(videos){
-    videos.sort(function(a,b){ return a.date < b.date ? 1 : -1; });
+    videos.sort(function(a,b){
+      if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+      var ai = a.id || '', bi = b.id || '';
+      return ai < bi ? 1 : (ai > bi ? -1 : 0);
+    });
     var groups = {};
     videos.forEach(function(v){
       var k = monthKey(v.date);
