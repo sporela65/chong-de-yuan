@@ -133,11 +133,12 @@
     document.title = v.title + ' · 崇德園晨會';
     var p = v.date.split('-');
     var roc = (parseInt(p[0],10)-1911) + '.' + parseInt(p[1],10) + '.' + parseInt(p[2],10);
+    var wk = '星期' + '日一二三四五六'.charAt(new Date(parseInt(p[0],10), parseInt(p[1],10)-1, parseInt(p[2],10)).getDay());
     main.innerHTML =
       '<div class="video-frame"><video controls playsinline preload="metadata"' +
         (v.poster ? ' poster="' + v.poster + '"' : '') + ' src="' + v.file + '"></video></div>' +
       '<div class="play-info"><h1>' + v.title + '</h1>' +
-      '<span class="meta">' + p[0] + ' 年 ' + parseInt(p[1],10) + ' 月 ' + parseInt(p[2],10) + ' 日（民國 ' + roc + '）' +
+      '<span class="meta">' + p[0] + ' 年 ' + parseInt(p[1],10) + ' 月 ' + parseInt(p[2],10) + ' 日 ' + wk +
       (v.duration ? ' · 長度 ' + v.duration : '') + '</span>' +
       '<span class="meta" id="vc" style="display:none"></span></div>';
     var COUNTER = 'https://chongde-counter.sporela886.workers.dev';
