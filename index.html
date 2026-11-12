@@ -114,6 +114,7 @@
   }
   .entry-date .day{font-size:30px;font-weight:900;line-height:1}
   .entry-date .ym-small{font-size:12px;letter-spacing:.18em;margin-top:6px;opacity:.85}
+  .entry-date .wk-small{font-size:12px;letter-spacing:.18em;margin-top:4px;color:var(--temple-yellow)}
   .entry-main{flex:1;padding:16px 18px;display:flex;align-items:center;gap:14px}
   .entry-info{flex:1;min-width:0}
   .entry-title{font-size:17.5px;font-weight:700;letter-spacing:.03em}
@@ -157,12 +158,20 @@
   footer .rule{width:120px;height:1px;background:var(--gold);margin:0 auto 14px;opacity:.6}
 
   @media (max-width:520px){
-    .entry-date{flex-basis:76px}
+    .entry{flex-wrap:nowrap}
+    .entry-date{flex-basis:76px;padding-left:6px;padding-right:6px}
     .entry-date .day{font-size:24px}
+    .entry-date .ym-small,.entry-date .wk-small{font-size:11px;letter-spacing:.08em;white-space:nowrap}
     .entry-main{padding:13px 14px}
     .entry-title{font-size:16px}
     .thumb{width:118px}
     .thumb .thumb-play span{width:34px;height:34px}
+  }
+  @media (max-width:380px){
+    .wrap{padding:0 12px 80px}
+    .entry-main{padding:12px 10px;gap:10px}
+    .entry-title{font-size:15px}
+    .thumb{width:96px}
   }
 </style>
 </head>
@@ -202,7 +211,8 @@
   var list = document.getElementById('list');
   function fmtDate(iso){
     var p = iso.split('-');
-    return {day: p[2], ym: p[0] + ' / ' + p[1], roc: (parseInt(p[0],10)-1911) + '.' + parseInt(p[1],10) + '.' + parseInt(p[2],10)};
+    var wk = '星期' + '日一二三四五六'.charAt(new Date(parseInt(p[0],10), parseInt(p[1],10)-1, parseInt(p[2],10)).getDay());
+    return {day: p[2], ym: p[0] + ' / ' + p[1], wk: wk, roc: (parseInt(p[0],10)-1911) + '.' + parseInt(p[1],10) + '.' + parseInt(p[2],10)};
   }
   function monthKey(iso){ return iso.slice(0,7); }
 
@@ -237,11 +247,11 @@
     var d = fmtDate(v.date);
     var el = document.createElement('article');
     el.className = 'entry' + (v.ready ? ' playable' : '');
-    var meta = '<span>' + d.roc + '（民國）</span>';
+    var meta = '';
     if (v.duration) meta += '<span>長度 ' + v.duration + '</span>';
     if (!v.ready) meta += '<span class="badge-pending">影片上傳中</span>';
     el.innerHTML =
-      '<div class="entry-date"><div class="day">' + d.day + '</div><div class="ym-small">' + d.ym + '</div></div>' +
+      '<div class="entry-date"><div class="day">' + d.day + '</div><div class="ym-small">' + d.ym + '</div><div class="wk-small">' + d.wk + '</div></div>' +
       '<div class="entry-main">' +
         '<div class="entry-info"><div class="entry-title">' + v.title + '</div>' +
         '<div class="entry-meta">' + meta + '</div></div>' +
