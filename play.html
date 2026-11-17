@@ -84,6 +84,36 @@
     margin-top:60px;text-align:center;color:var(--ink-soft);font-size:12.5px;letter-spacing:.08em;
   }
   footer .rule{width:120px;height:1px;background:var(--gold);margin:0 auto 14px;opacity:.6}
+
+/* Return to video list: approved text-only navigation. */
+.back{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:48px;
+  margin-top:14px;
+  padding:6px 10px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#7d211d;
+  font-size:12.5px;
+  font-weight:700;
+  line-height:1.5;
+  letter-spacing:.08em;
+  text-decoration:none;
+  text-decoration-thickness:1px;
+  text-underline-offset:6px;
+  box-shadow:none;
+  transition:color .2s ease;
+}
+.back:hover{color:#4f1714;border-color:transparent}
+.back:focus-visible{outline:2px solid #7d211d;outline-offset:4px}
+.back .back-arrow{font-size:16px;line-height:1}
+
+.back span:last-child{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+
 </style>
 </head>
 <body>
@@ -104,7 +134,7 @@
       <span class="seal">晨</span>
       <span class="name">崇德園晨會</span>
     </a>
-    <div><a class="back" href="index.html">&larr; 返回影片列表</a></div>
+    <div><a class="back" href="index.html"><span class="back-arrow" aria-hidden="true">←</span><span>返回影片列表</span></a></div>
   </header>
 
   <main id="main"></main>
