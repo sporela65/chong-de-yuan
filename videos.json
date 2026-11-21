@@ -113,3 +113,68 @@
   "title": "晨會筆記-念講(二)",
   "duration": "6:49",
   "file": "3-20261106-notes-2.mp4",
+  "poster": "4-20261106-notes-2.jpg",
+  "ready": true
+ },
+ {
+  "date": "2026-11-04",
+  "title": "晨會筆記-體制（一）",
+  "duration": "4:44",
+  "file": "1-20261104-notes-1.mp4",
+  "ready": true,
+  "poster": "2-20261104-notes-1.jpg",
+  "id": "2026-11-04-1"
+ },
+ {
+  "id": "2026-11-04-2",
+  "date": "2026-11-04",
+  "title": "晨會筆記-金馬獎（二）",
+  "duration": "2:03",
+  "file": "1-20261104-notes-2.mp4",
+  "poster": "2-20261104-notes-2.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-04-3",
+  "date": "2026-11-04",
+  "title": "晨會筆記-目標（三）",
+  "duration": "4:11",
+  "file": "1-upload-notes-3-fixed.mp4",
+  "poster": "2-upload-notes-3-fixed.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-04-4",
+  "date": "2026-11-04",
+  "title": "晨會筆記-講師愿（四）",
+  "duration": "7:33",
+  "file": "4-20261104-notes-4.mp4",
+  "poster": "5-20261104-notes-4.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-04-5",
+  "date": "2026-11-04",
+  "title": "晨會筆記-人才（五）",
+  "duration": "8:10",
+  "file": "1-20261104-notes-5.mp4",
+  "poster": "2-20261104-notes-5.jpg",
+  "ready": true
+ },
+ {
+  "date": "2026-11-03",
+  "title": "馬經理晨會 十組運作與體制傳承（旁白版）",
+  "duration": "30:49",
+  "file": "1-20261103-chenhui-narrated.mp4",
+  "ready": true,
+  "poster": "2-20261103-chenhui-narrated.jpg"
+ },
+ {
+  "date": "2026-11-02",
+  "title": "馬經理晨會 北美 影片（旁白版）",
+  "duration": "29:28",
+  "file": "videos/20261102-chenhui-narrated.mp4",
+  "ready": true,
+  "poster": "videos/20261102-chenhui-narrated.jpg"
+ }
+]
