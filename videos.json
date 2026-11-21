@@ -1,154 +1,115 @@
-[{"id":"2026-11-18-1","date":"2026-11-18","title":"晨會筆記-鞏固成全系統","duration":"35:43","file":"2-20261118-notes-1.mp4","poster":"3-20261118-notes-1.jpg","ready":true},
-  {"id":"2026-11-16-1","date":"2026-11-16","title":"晨會筆記-台中道場十組大檢閱","duration":"31:04","file":"1-20261116-notes-1.mp4","poster":"2-20261116-notes-1.jpg","ready":true},
-  {
-    "id": "2026-11-12-1",
-    "date": "2026-11-12",
-    "title": "晨會筆記-中興點傳師結緣",
-    "duration": "34:08",
-    "file": "5-2026.11.12 晨會筆記-中興道場結緣.mp4",
-    "poster": "2-2026-11-12-1.jpg",
-    "ready": true
-  },
-  {
-    "id": "2026-11-11-1",
-    "date": "2026-11-11",
-    "title": "晨會筆記-修行人要有故事",
-    "duration": "25:15",
-    "file": "1-2026.11.11 晨會筆記-修行人要有故事.mp4",
-    "poster": "2-2026-11-11-1.jpg",
-    "ready": true
-  },
-  {
-    "id": "2026-11-10-1",
-    "date": "2026-11-10",
-    "title": "晨會筆記-畢班後的檢核",
-    "duration": "28:54",
-    "file": "1-20261110-notes-1.mp4",
-    "poster": "2-20261110-notes-1.jpg",
-    "ready": true
-  },
-  {
-    "id": "2026-11-09-3",
-    "date": "2026-11-09",
-    "title": "晨會筆記-心心念念(三)",
-    "duration": "12:57",
-    "file": "6-2026.11.09 晨會筆記-心心念念(三).mp4",
-    "poster": "7-20261109-notes-3.jpg",
-    "ready": true
-  },
-  {
-    "id": "2026-11-09-2",
-    "date": "2026-11-09",
-    "title": "晨會筆記-活得久要修得更好(二)",
-    "duration": "7:15",
-    "file": "4-20261109-notes-2.mp4",
-    "poster": "5-20261109-notes-2.jpg",
-    "ready": true
-  },
-  {
-    "id": "2026-11-09-1",
-    "date": "2026-11-09",
-    "title": "晨會筆記-基本功(一)",
-    "duration": "11:19",
-    "file": "1-20261109-notes-1.mp4",
-    "poster": "2-20261109-notes-1.jpg",
-    "ready": true
-  },
-  {
-    "id": "2026-11-06-4",
-    "date": "2026-11-06",
-    "title": "晨會筆記-病痛(四)",
-    "duration": "5:44",
-    "file": "1-20261106-notes-4.mp4",
-    "poster": "2-20261106-notes-4.jpg",
-    "ready": true
-  },
-  {
-    "id": "2026-11-06-3",
-    "date": "2026-11-06",
-    "title": "晨會筆記-設壇(三)",
-    "duration": "8:55",
-    "file": "3-20261106-notes-3.mp4",
-    "poster": "4-20261106-notes-3.jpg",
-    "ready": true
-  },
-  {
-    "id": "2026-11-06-1",
-    "date": "2026-11-06",
-    "title": "晨會筆記-畢班(一)",
-    "duration": "14:26",
-    "file": "1-20261106-notes-1.mp4",
-    "poster": "2-20261106-notes-1.jpg",
-    "ready": true
-  },
-  {
-    "id": "2026-11-06-2",
-    "date": "2026-11-06",
-    "title": "晨會筆記-念講(二)",
-    "duration": "6:49",
-    "file": "3-20261106-notes-2.mp4",
-    "poster": "4-20261106-notes-2.jpg",
-    "ready": true
-  },
-  {
-    "date": "2026-11-04",
-    "title": "晨會筆記-體制（一）",
-    "duration": "4:44",
-    "file": "1-20261104-notes-1.mp4",
-    "ready": true,
-    "poster": "2-20261104-notes-1.jpg",
-    "id": "2026-11-04-1"
-  },
-  {
-    "id": "2026-11-04-2",
-    "date": "2026-11-04",
-    "title": "晨會筆記-金馬獎（二）",
-    "duration": "2:03",
-    "file": "1-20261104-notes-2.mp4",
-    "poster": "2-20261104-notes-2.jpg",
-    "ready": true
-  },
-  {
-    "id": "2026-11-04-3",
-    "date": "2026-11-04",
-    "title": "晨會筆記-目標（三）",
-    "duration": "4:11",
-    "file": "1-upload-notes-3-fixed.mp4",
-    "poster": "2-upload-notes-3-fixed.jpg",
-    "ready": true
-  },
-  {
-    "id": "2026-11-04-4",
-    "date": "2026-11-04",
-    "title": "晨會筆記-講師愿（四）",
-    "duration": "7:33",
-    "file": "4-20261104-notes-4.mp4",
-    "poster": "5-20261104-notes-4.jpg",
-    "ready": true
-  },
-  {
-    "id": "2026-11-04-5",
-    "date": "2026-11-04",
-    "title": "晨會筆記-人才（五）",
-    "duration": "8:10",
-    "file": "1-20261104-notes-5.mp4",
-    "poster": "2-20261104-notes-5.jpg",
-    "ready": true
-  },
-  {
-    "date": "2026-11-03",
-    "title": "馬經理晨會 十組運作與體制傳承（旁白版）",
-    "duration": "30:49",
-    "file": "1-20261103-chenhui-narrated.mp4",
-    "ready": true,
-    "poster": "2-20261103-chenhui-narrated.jpg"
-  },
-  {
-    "date": "2026-11-02",
-    "title": "馬經理晨會 北美 影片（旁白版）",
-    "duration": "29:28",
-    "file": "videos/20261102-chenhui-narrated.mp4",
-    "ready": true,
-    "poster": "videos/20261102-chenhui-narrated.jpg"
-  }
-]
+[
+ {
+  "id": "2026-11-18-1",
+  "date": "2026-11-18",
+  "title": "晨會筆記-鞏固成全系統",
+  "duration": "35:43",
+  "file": "2-20261118-notes-1.mp4",
+  "poster": "3-20261118-notes-1.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-17-1",
+  "date": "2026-11-17",
+  "title": "晨會筆記-結緣訓的警惕",
+  "duration": "33:58",
+  "file": "2-20261117-notes-1.mp4",
+  "poster": "3-20261117-notes-1.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-16-1",
+  "date": "2026-11-16",
+  "title": "晨會筆記-台中道場十組大檢閱",
+  "duration": "31:04",
+  "file": "1-20261116-notes-1.mp4",
+  "poster": "2-20261116-notes-1.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-12-1",
+  "date": "2026-11-12",
+  "title": "晨會筆記-中興點傳師結緣",
+  "duration": "34:08",
+  "file": "5-2026.11.12 晨會筆記-中興道場結緣.mp4",
+  "poster": "2-2026-11-12-1.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-11-1",
+  "date": "2026-11-11",
+  "title": "晨會筆記-修行人要有故事",
+  "duration": "25:15",
+  "file": "1-2026.11.11 晨會筆記-修行人要有故事.mp4",
+  "poster": "2-2026-11-11-1.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-10-1",
+  "date": "2026-11-10",
+  "title": "晨會筆記-畢班後的檢核",
+  "duration": "28:54",
+  "file": "1-20261110-notes-1.mp4",
+  "poster": "2-20261110-notes-1.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-09-3",
+  "date": "2026-11-09",
+  "title": "晨會筆記-心心念念(三)",
+  "duration": "12:57",
+  "file": "6-2026.11.09 晨會筆記-心心念念(三).mp4",
+  "poster": "7-20261109-notes-3.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-09-2",
+  "date": "2026-11-09",
+  "title": "晨會筆記-活得久要修得更好(二)",
+  "duration": "7:15",
+  "file": "4-20261109-notes-2.mp4",
+  "poster": "5-20261109-notes-2.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-09-1",
+  "date": "2026-11-09",
+  "title": "晨會筆記-基本功(一)",
+  "duration": "11:19",
+  "file": "1-20261109-notes-1.mp4",
+  "poster": "2-20261109-notes-1.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-06-4",
+  "date": "2026-11-06",
+  "title": "晨會筆記-病痛(四)",
+  "duration": "5:44",
+  "file": "1-20261106-notes-4.mp4",
+  "poster": "2-20261106-notes-4.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-06-3",
+  "date": "2026-11-06",
+  "title": "晨會筆記-設壇(三)",
+  "duration": "8:55",
+  "file": "3-20261106-notes-3.mp4",
+  "poster": "4-20261106-notes-3.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-06-1",
+  "date": "2026-11-06",
+  "title": "晨會筆記-畢班(一)",
+  "duration": "14:26",
+  "file": "1-20261106-notes-1.mp4",
+  "poster": "2-20261106-notes-1.jpg",
+  "ready": true
+ },
+ {
+  "id": "2026-11-06-2",
+  "date": "2026-11-06",
+  "title": "晨會筆記-念講(二)",
+  "duration": "6:49",
+  "file": "3-20261106-notes-2.mp4",
